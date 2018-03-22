@@ -8,14 +8,10 @@ import lejos.nxt.UltrasonicSensor;
 import lejos.util.Delay;
 
 public class Main {
-	public static void main(String[] args) {
-		Importer importer = new Importer();
-		try {
-			importer.read("C:\\Users\\qri2\\Desktop\\Testdukoment.txt");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public static void main(String[] args) {		
+		
+//		Importer importer = new Importer();		
+//		importer.convertTxtFileToInput("C:\\Users\\qri2\\Desktop\\Testdukoment.txt");
 		
 		final PlatformMover platformMover = new PlatformMover(new NXTRegulatedMotor(MotorPort.A));
 		final ArmMover armMover = new ArmMover(new NXTRegulatedMotor(MotorPort.C), new UltrasonicSensor(SensorPort.S1));
