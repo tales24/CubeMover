@@ -3,17 +3,18 @@ package de.inmediasp.nxt;
 import java.util.ArrayList;
 import java.util.List;
 
-import lejos.nxt.Button;
-import lejos.nxt.LCD;
-import lejos.nxt.MotorPort;
-import lejos.nxt.NXTRegulatedMotor;
-import lejos.nxt.SensorPort;
-import lejos.nxt.UltrasonicSensor;
+import lejos.util.Delay;
 
 public class MoveController {
 	private static final List<String> AVAILABLE_MOVEMENTS = new ArrayList<>();
 	
-	public MoveController() {
+	private ArmMover armMover;
+	private PlatformMover platformMover;
+	
+	public MoveController(final ArmMover armMover, final PlatformMover platformMover) {
+		this.armMover = armMover;
+		this.platformMover = platformMover;
+		
 		initializeMovementList();
 	}
 	
@@ -36,12 +37,61 @@ public class MoveController {
 		AVAILABLE_MOVEMENTS.add("y");
 	}
 	
-	public void movement_X(final PlatformMover platformMover) {
-		platformMover.rotatePlatformClockwise(RotationAngles.QUARTER);
+	public void movement_D() {
+		armMover.grabCube();
+		movement_X();
+		armMover.releaseCube();
 	}
 	
-	public void movement_x(final PlatformMover platformMover) {
-		platformMover.rotatePlatformCounterClockwise(RotationAngles.QUARTER);
+	public void movement_X() {
+		platformMover.rotatePlatformClockwise(RotationAngles.QUARTER.getTranslatedAngle());
+	}
+	
+	public void movement_x() {
+		platformMover.rotatePlatformCounterClockwise(RotationAngles.QUARTER.getTranslatedAngle());
 	}
 
+	public void movement_Y() {
+		armMover.flipCube();
+	}
+	
+	public void movement_y() {
+		armMover.flipCube();
+		armMover.flipCube();
+		armMover.flipCube();
+	}
+
+	public void reset() {
+		armMover.resetArm();
+	}
+	
+	public void scanSequence() {
+		// Up
+		Delay.msDelay(1000);
+		movement_Y();
+		
+		// Front
+		Delay.msDelay(1000);
+		movement_Y();
+		
+		// Down
+		Delay.msDelay(1000);
+		movement_Y();
+		
+		// Back
+		Delay.msDelay(1000);
+		movement_Y();
+		movement_x();
+		movement_Y();
+		
+		// Left
+		Delay.msDelay(1000);
+		movement_Y();
+		movement_Y();
+
+		// Right
+		Delay.msDelay(1000);
+		movement_Y();
+		movement_X();
+	}
 }

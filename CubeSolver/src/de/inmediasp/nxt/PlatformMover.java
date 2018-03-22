@@ -18,11 +18,11 @@ public class PlatformMover {
 		this.cubePlatform = cubePlatform;
 	}
 	
-	public void rotatePlatformClockwise(RotationAngles angle) {
-		cubePlatform.rotate(-1 * angle.getIntValue());
+	public void rotatePlatformClockwise(int angle) {
+		cubePlatform.rotate(-1 * angle);
 	}
 	
-	public void rotatePlatformCounterClockwise(RotationAngles angle) {
-		cubePlatform.rotate(angle.getIntValue());
+	public void rotatePlatformCounterClockwise(int angle) {
+		cubePlatform.rotate(angle);
 	}
 }
