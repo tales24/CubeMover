@@ -37,7 +37,97 @@ public class MoveController {
 		AVAILABLE_MOVEMENTS.add("y");
 	}
 	
+	public void movement_f() {
+		movement_y();
+		armMover.grabCube();
+		movement_X();
+		armMover.releaseCube();
+		movement_Y();
+	} 
 	
+	public void movement_F() {
+		movement_y();
+		armMover.grabCube();
+		movement_x();
+		armMover.releaseCube();
+		movement_Y();
+	}
+	
+	public void movement_B() {
+		movement_Y();
+		armMover.grabCube();
+		movement_X();
+		armMover.releaseCube();
+		movement_y();
+	}
+	
+	public void movement_b() {
+		movement_Y();
+		armMover.grabCube();
+		movement_x();
+		armMover.releaseCube();
+		movement_y();
+	}
+	
+	public void movement_u() {
+		movement_Y();
+		movement_Y();
+		armMover.grabCube();
+		movement_X();
+		armMover.releaseCube();
+		movement_Y();
+		movement_Y();
+	}
+	
+	public void movement_U() {
+		movement_Y();
+		movement_Y();
+		armMover.grabCube();
+		movement_x();
+		armMover.releaseCube();
+		movement_Y();
+		movement_Y();
+	}
+	
+	public void movement_l() {
+		movement_X();
+		movement_Y();
+		armMover.grabCube();
+		movement_X();
+		armMover.releaseCube();
+		movement_y();
+		movement_x();
+	}
+	
+	public void movement_L() {
+		movement_X();
+		movement_Y();
+		armMover.grabCube();
+		movement_x();
+		armMover.releaseCube();
+		movement_y();
+		movement_x();
+	}
+	
+	public void movement_R() {
+		movement_x();
+		movement_Y();
+		armMover.grabCube();
+		movement_x();
+		armMover.releaseCube();
+		movement_y();
+		movement_X();
+	}
+	
+	public void movement_r() {
+		movement_x();
+		movement_Y();
+		armMover.grabCube();
+		movement_X();
+		armMover.releaseCube();
+		movement_y();
+		movement_X();
+	}
 	
 	public void movement_D() {
 		armMover.grabCube();

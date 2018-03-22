@@ -1,6 +1,5 @@
 package de.inmediasp.nxt;
 
-import java.io.IOException;
 import lejos.nxt.MotorPort;
 import lejos.nxt.NXTRegulatedMotor;
 import lejos.nxt.SensorPort;
@@ -19,8 +18,8 @@ public class Main {
 		final MoveController moveController = new MoveController(armMover, platformMover);
 		
 		moveController.reset();
-		moveController.movement_D();
+		moveController.movement_f();
 		Delay.msDelay(1000);
-		moveController.movement_d();
+		moveController.movement_F();
  	}
 }
