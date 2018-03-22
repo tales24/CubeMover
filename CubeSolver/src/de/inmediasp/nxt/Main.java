@@ -10,14 +10,10 @@ import lejos.nxt.SensorPort;
 import lejos.nxt.UltrasonicSensor;
 
 public class Main {
-	public static void main(String[] args) {
-		Importer importer = new Importer();
-		try {
-			importer.read("C:\\Users\\qri2\\Desktop\\Testdukoment.txt");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public static void main(String[] args) {		
+		
+//		Importer importer = new Importer();		
+//		importer.convertTxtFileToInput("C:\\Users\\qri2\\Desktop\\Testdukoment.txt");
 		
 		final MoveController moveController = new MoveController();
 		final PlatformMover platformMover = new PlatformMover(new NXTRegulatedMotor(MotorPort.A));
