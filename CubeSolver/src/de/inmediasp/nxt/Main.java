@@ -18,6 +18,9 @@ public class Main {
 
 		final MoveController moveController = new MoveController(armMover, platformMover);
 		
+		moveController.reset();
 		moveController.movement_D();
+		Delay.msDelay(1000);
+		moveController.movement_d();
  	}
 }

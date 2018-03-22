@@ -16,10 +16,10 @@ public class ArmMover {
 	}
 	
 	public void resetArm() {
-		if (ultrasonicSensor.getDistance() < 10.5) {
-			cubeArm.rotate(-180);
+//		if (ultrasonicSensor.getDistance() < 10.5) {
+			cubeArm.rotate(180);
 			cubeArm.resetTachoCount();
-		}
+//		}
 	}
 	
 	public void flipCube() {

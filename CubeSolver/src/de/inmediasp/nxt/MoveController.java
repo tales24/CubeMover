@@ -37,7 +37,15 @@ public class MoveController {
 		AVAILABLE_MOVEMENTS.add("y");
 	}
 	
+	
+	
 	public void movement_D() {
+		armMover.grabCube();
+		movement_x();
+		armMover.releaseCube();
+	}
+	
+	public void movement_d() {
 		armMover.grabCube();
 		movement_X();
 		armMover.releaseCube();
